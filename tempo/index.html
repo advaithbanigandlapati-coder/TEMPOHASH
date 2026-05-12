@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#020617" />
+<title>Tempo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23020617'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='monospace' font-size='20' font-weight='700' fill='%2322d3ee'%3E%23%3C/text%3E%3C/svg%3E" />
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+</head>
+<body>
+
+<!-- Ambient ocean -->
+<div class="ocean"></div>
+<div class="hash-field" id="hashField"></div>
+<div class="shafts"></div>
+<div class="caustics"></div>
+<div class="bubbles" id="bubbles"></div>
+<svg class="wave" viewBox="0 0 1440 240" preserveAspectRatio="none"><path fill="rgba(34,211,238,0.05)" d="M0,160L48,144C96,128,192,96,288,101.3C384,107,480,149,576,154.7C672,160,768,128,864,112C960,96,1056,96,1152,112C1248,128,1344,160,1392,176L1440,192L1440,240L0,240Z"/></svg>
+<svg class="wave wave-2" viewBox="0 0 1440 240" preserveAspectRatio="none"><path fill="rgba(59,130,246,0.04)" d="M0,192L60,176C120,160,240,128,360,122.7C480,117,600,139,720,144C840,149,960,139,1080,122.7C1200,107,1320,85,1380,74.7L1440,64L1440,240L0,240Z"/></svg>
+
+<!-- Auth screen (mounted by main.js when needed) -->
+<div class="auth-screen" id="authScreen" hidden></div>
+
+<!-- App shell (mounted by main.js after auth) -->
+<div class="app" id="appRoot" hidden>
+  <aside class="sidebar" id="sidebar"></aside>
+  <header class="topbar" id="topbar"></header>
+  <main class="main" id="main"></main>
+</div>
+
+<!-- Toast container -->
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- Cmd+K palette -->
+<div class="palette-backdrop" id="paletteBackdrop" hidden></div>
+
+<!-- Modal layer -->
+<div class="modal-layer" id="modalLayer"></div>
+
+<!-- Loading splash -->
+<div class="splash" id="splash">
+  <div class="splash-inner">
+    <div class="splash-mark">#</div>
+    <div class="splash-name">Tempo</div>
+    <div class="splash-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>
